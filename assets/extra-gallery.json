@@ -1,0 +1,19 @@
+{
+  "eats": [
+    {
+      "src": "assets/extra/eats-1.jpg",
+      "alt": "Unagi meal photo",
+      "caption": "unagi"
+    },
+    {
+      "src": "assets/extra/eats-2.jpg",
+      "alt": "Gyutan set meal photo",
+      "caption": "gyutan"
+    },
+    {
+      "src": "assets/extra/eats-3.jpg",
+      "alt": "Ramen photo",
+      "caption": "ramen"
+    }
+  ]
+}

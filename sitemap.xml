@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mitukx.github.io/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <image:image>
+      <image:loc>https://mitukx.github.io/assets/profile.jpg</image:loc>
+      <image:title>Kazuki Uesugi</image:title>
+      <image:caption>Portrait of Kazuki Uesugi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitukx.github.io/assets/og-image.png</image:loc>
+      <image:title>Kazuki Uesugi with Enderman favicon</image:title>
+      <image:caption>Personal website preview image for Kazuki Uesugi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mitukx.github.io/projects.html</loc>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://mitukx.github.io/publications.html</loc>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://mitukx.github.io/misc.html</loc>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+</urlset>

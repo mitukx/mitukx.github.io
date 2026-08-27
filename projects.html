@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <title>Projects · Kazuki Uesugi</title>
+  <meta name="description" content="Research projects by Kazuki Uesugi in statistical learning theory, deep learning theory, and formal methods." />
+  <link rel="canonical" href="https://mitukx.github.io/projects.html" />
+  <meta property="og:title" content="Projects · Kazuki Uesugi" />
+  <meta property="og:site_name" content="Kazuki Uesugi" />
+  <meta property="og:description" content="Research projects by Kazuki Uesugi in statistical learning theory, deep learning theory, and formal methods." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mitukx.github.io/projects.html" />
+  <meta property="og:image" content="https://mitukx.github.io/assets/og-image.png" />
+  <meta property="og:image:secure_url" content="https://mitukx.github.io/assets/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kazuki Uesugi with Enderman favicon" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects · Kazuki Uesugi" />
+  <meta name="twitter:description" content="Research projects by Kazuki Uesugi in statistical learning theory, deep learning theory, and formal methods." />
+  <meta name="twitter:image" content="https://mitukx.github.io/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="Kazuki Uesugi with Enderman favicon" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="800x800" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <style>
+    .projects-intro {
+      max-width: 760px;
+      margin-top: 0.75rem;
+      color: var(--muted, #5f6873);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .project-card.featured {
+      border-color: #111111;
+      box-shadow: 3px 3px 0 rgba(17, 17, 17, 0.12);
+    }
+
+    .project-kicker {
+      margin: 0 0 0.55rem;
+      color: #555555;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .project-links a {
+      font-weight: 700;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 1.15rem;
+      margin-top: 2rem;
+      max-width: 900px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border, rgba(20, 30, 45, 0.14));
+      border-radius: 6px;
+      background: var(--surface, #fff);
+      padding: 1.35rem 1.45rem;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+
+    .project-card header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .project-card h2 {
+      margin: 0;
+      font-size: 1.22rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+    }
+
+
+    .project-summary {
+      margin: 0;
+      color: var(--text, #1f2937);
+      line-height: 1.72;
+    }
+
+    .project-points {
+      margin: 0.9rem 0 0;
+      padding-left: 1.05rem;
+      color: var(--text, #1f2937);
+      line-height: 1.65;
+    }
+
+    .project-points li + li {
+      margin-top: 0.35rem;
+    }
+
+    @media (max-width: 720px) {
+      .project-card header {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+    <aside class="sidebar" aria-label="Profile sidebar">
+      <canvas id="networkCanvas" class="network-canvas" aria-hidden="true"></canvas>
+
+      <div class="sidebar-inner">
+        <a class="site-title" href="index.html">Kazuki<br />Uesugi</a>
+
+        <div class="portrait">
+          <img src="assets/profile.jpg" alt="Kazuki Uesugi" />
+        </div>
+
+        <p class="tagline">Statistical Learning Theory | Deep Learning Theory</p>
+
+        <nav class="nav" aria-label="Primary navigation">
+  <a href="index.html">Home</a>
+  <a class="active" href="projects.html">Projects</a>
+  <a href="publications.html">Publications</a>
+  <a href="misc.html">Misc</a>
+</nav>
+
+        <div class="icon-links" aria-label="External links">
+          <a href="mailto:kzkuesg@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-.5a.5.5 0 0 0-.5.5v.217l6.5 3.9 6.5-3.9V4a.5.5 0 0 0-.5-.5H2Zm12.5 2.383-4.708 2.825L14.5 11.5V5.883Zm-.034 6.481-5.692-3.371-.774.464-.774-.464-5.692 3.371A.5.5 0 0 0 2 12.5h12a.5.5 0 0 0 .466-.136ZM1.5 11.5l4.708-2.792L1.5 5.883V11.5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/kazuki-uesugi/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854V1.146Zm4.943 12.248V6.169H2.542v7.225h2.401Zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.521-1.248-1.342-1.248-.822 0-1.358.54-1.358 1.248 0 .694.521 1.248 1.327 1.248h.015Zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4Z"/></svg>
+          </a>
+          <a href="https://scholar.google.com/" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 0 5l8 4 8-4-8-4Zm0 5.764L3.236 4.382 8 2l4.764 2.382L8 6.764Z"/><path d="M2 7.5v3.2c0 .8 2.7 2.3 6 2.3s6-1.5 6-2.3V7.5l-6 3-6-3Z"/></svg>
+          </a>
+          <a href="https://github.com/mitukx" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </a>
+        </div>
+
+        <footer class="site-footer">
+          <a href="https://github.com/mitukx/mitukx.github.io/blob/main/LICENSE" target="_blank" rel="noreferrer">MIT License</a>
+          <span>© 2026 Kazuki Uesugi</span>
+        </footer>
+        </div>
+    </aside>
+
+    <main class="content amini-right">
+      <header class="top-profile">
+        <h1>Projects</h1>
+        <p class="projects-intro">
+          Selected research projects in statistical learning theory, deep learning theory,
+          and formal methods.
+        </p>
+      </header>
+
+      <section class="project-list" aria-label="Research projects">
+        <article class="project-card featured">
+          <p class="project-kicker">Contributor · Lean 4 formalization</p>
+          <header>
+            <h2>StatsMLlib</h2>
+          </header>
+
+          <p class="project-summary">
+            I contribute to StatsMLlib, a project formalizing deep learning theory,
+            high-dimensional statistics, probability theory, and concentration
+            inequalities in Lean 4. I work on this project alongside my research.
+          </p>
+
+          <p class="project-summary">
+            The project is maintained by the Lean-MoDS community and is an ongoing
+            effort to make rigorous results in modern statistics and machine learning
+            available in a machine-checked form.
+          </p>
+
+          <div class="project-links" aria-label="StatsMLlib links">
+            <a href="https://statsmllib.github.io" target="_blank" rel="noreferrer">Official website</a>
+            <a href="https://github.com/Lean-MoDS/StatsMLlib" target="_blank" rel="noreferrer">GitHub repository</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <header>
+            <h2>Best-of-N Inference under Imperfect Verifiers</h2>
+          </header>
+
+          <p class="project-summary">
+            I am developing a theoretical framework for understanding Best-of-N inference
+            under imperfect verification. The project studies how inference-time search
+            interacts with verifier rankings and true utility, with a focus on the
+            statistical foundations of evaluating such systems.
+          </p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/network.js"></script>
+  <script src="assets/spa-nav.js"></script>
+</body>
+</html>
