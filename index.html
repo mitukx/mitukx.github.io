@@ -31,6 +31,7 @@
   <link rel="icon" href="/favicon.png" type="image/png" sizes="800x800" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/favicon.png" />
+  <script src="assets/theme.js"></script>
 
   <script type="application/ld+json">
   {
@@ -119,20 +120,20 @@
       line-height: 1.45;
     }
     .interest-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      display: block;
       margin-top: 12px;
     }
     .interest-chip {
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(17, 17, 17, 0.18);
-      border-radius: 4px;
-      padding: 5px 10px;
-      background: rgba(239, 239, 239, 0.75);
+      display: inline;
+      padding: 0;
       font-size: 14px;
       line-height: 1.2;
+    }
+    .interest-chip:not(:last-child)::after {
+      content: ", ";
+    }
+    .awards-list {
+      margin-top: 12px;
     }
     .cv-publication-list {
       margin: 14px 0 0 22px;
@@ -216,6 +217,9 @@
 
     <main class="content amini-right">
       <header class="top-profile">
+        <div class="theme-controls" role="group" aria-label="Color theme">
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Change color theme" title="Change color theme">◐</button>
+        </div>
         <h1>Kazuki Uesugi (上杉和輝)</h1>
 
         <div class="profile-info">
@@ -231,7 +235,7 @@
             <span> / </span>
             <a href="https://www.linkedin.com/in/kazuki-uesugi/" target="_blank" rel="noreferrer">LinkedIn</a>
           </p>
-          <p><em>Site last update: August 2026</em></p>
+          <p><em>Site last update: September 2026</em></p>
         </div>
       </header>
 
@@ -269,7 +273,7 @@
 
       <section class="cv-section">
         <h2>Awards and Honors</h2>
-        <div class="news-box cv-box" aria-label="Awards and honors">
+        <div class="cv-box awards-list" aria-label="Awards and honors">
           <div class="cv-entry">
             <div class="cv-entry-head">
               <strong>ZEN University Merit Scholarship Recipient</strong>
@@ -281,64 +285,64 @@
         </div>
       </section>
 
-      <hr />
-
       <section class="extra-section">
-        <h2>Extra</h2>
-        <div class="extra-grid extra-grid-photo">
-          <details class="extra-card extra-card-music">
-            <summary>Music</summary>
-            <p class="extra-lead">Prime</p>
-            <div id="music-list" class="music-list">
-              <div class="music-placeholder">Loading music...</div>
-            </div>
-          </details>
+        <details class="extra-reveal">
+          <summary class="extra-reveal-button" aria-label="Open extra content" title="Extra">⋯</summary>
+          <div class="extra-grid extra-grid-photo">
+            <details class="extra-card extra-card-music">
+              <summary>Music</summary>
+              <p class="extra-lead">Prime</p>
+              <div id="music-list" class="music-list">
+                <div class="music-placeholder">Loading music...</div>
+              </div>
+            </details>
 
-          <details class="extra-card">
-            <summary>Reads</summary>
-            <ul class="extra-list extra-reading-list">
-              <li><strong>ゼロ金利との闘い</strong><br /><span>The Battle Against Zero Interest Rates / 日本銀行・金融政策史として面白かった本</span></li>
-              <li><strong>テクノ・リバタリアン</strong><br /><span>現代テック思想・権力・自由を考える本</span></li>
-              <li><strong>反脆弱性［上］ / Antifragile: Things That Gain from Disorder</strong><br /><span>Nassim Nicholas Taleb / ナシーム・ニコラス・タレブ</span></li>
-              <li><strong>The Art of Doing Science and Engineering</strong><br /><span>Richard Hamming</span></li>
-              <li><strong>21st Century Monetary Policy</strong><br /><span>Ben S. Bernanke</span></li>
-              <li><strong>The Double Helix</strong><br /><span>James D. Watson</span></li>
-              <li><strong>Superintelligence</strong><br /><span>Nick Bostrom</span></li>
-              <li><strong>Nexus</strong><br /><span>Yuval Noah Harari</span></li>
-              <li><strong>Sapiens / Homo Deus / 21 Lessons</strong><br /><span>Yuval Noah Harari</span></li>
-              <li><strong>Why Nations Fail</strong><br /><span>Daron Acemoglu, James A. Robinson</span></li>
-              <li><strong>The Narrow Corridor</strong><br /><span>Daron Acemoglu, James A. Robinson</span></li>
-            </ul>
-          </details>
+            <details class="extra-card">
+              <summary>Reads</summary>
+              <ul class="extra-list extra-reading-list">
+                <li><strong>ゼロ金利との闘い</strong><br /><span>The Battle Against Zero Interest Rates / 日本銀行・金融政策史として面白かった本</span></li>
+                <li><strong>テクノ・リバタリアン</strong><br /><span>現代テック思想・権力・自由を考える本</span></li>
+                <li><strong>反脆弱性［上］ / Antifragile: Things That Gain from Disorder</strong><br /><span>Nassim Nicholas Taleb / ナシーム・ニコラス・タレブ</span></li>
+                <li><strong>The Art of Doing Science and Engineering</strong><br /><span>Richard Hamming</span></li>
+                <li><strong>21st Century Monetary Policy</strong><br /><span>Ben S. Bernanke</span></li>
+                <li><strong>The Double Helix</strong><br /><span>James D. Watson</span></li>
+                <li><strong>Superintelligence</strong><br /><span>Nick Bostrom</span></li>
+                <li><strong>Nexus</strong><br /><span>Yuval Noah Harari</span></li>
+                <li><strong>Sapiens / Homo Deus / 21 Lessons</strong><br /><span>Yuval Noah Harari</span></li>
+                <li><strong>Why Nations Fail</strong><br /><span>Daron Acemoglu, James A. Robinson</span></li>
+                <li><strong>The Narrow Corridor</strong><br /><span>Daron Acemoglu, James A. Robinson</span></li>
+              </ul>
+            </details>
 
 
-          <details class="extra-card">
-            <summary>Watchlist</summary>
-            <ul class="extra-list extra-watchlist">
-              <li>Interstellar</li>
-              <li>TENET</li>
-              <li>Inception</li>
-              <li>Dunkirk</li>
-              <li>Oppenheimer</li>
-              <li>Memento</li>
-              <li>1917</li>
-              <li>American Sniper</li>
-              <li>Harry Potter Series</li>
-              <li>Dune Series</li>
-              <li>The Lord of the Rings</li>
-              <li>Top Gun</li>
-              <li>2001: A Space Odyssey</li>
-            </ul>
-          </details>
+            <details class="extra-card">
+              <summary>Watchlist</summary>
+              <ul class="extra-list extra-watchlist">
+                <li>Interstellar</li>
+                <li>TENET</li>
+                <li>Inception</li>
+                <li>Dunkirk</li>
+                <li>Oppenheimer</li>
+                <li>Memento</li>
+                <li>1917</li>
+                <li>American Sniper</li>
+                <li>Harry Potter Series</li>
+                <li>Dune Series</li>
+                <li>The Lord of the Rings</li>
+                <li>Top Gun</li>
+                <li>2001: A Space Odyssey</li>
+              </ul>
+            </details>
 
-          <details class="extra-card">
-            <summary>Sidequests</summary>
-            <ul class="extra-list">
-              <li><strong>Reading outside my field</strong><br /><span>science memoirs, Quantitative Finance, AI history, space exploration, physics, and books that make ambition feel less abstract.</span><br /><span><span></li>
-              <li><strong>Trying new things</strong><br /><span>new books, new places, new routines, new people, new obsessions. Anything that expands the map.</span><br /><span></span></li>
-            </ul>
-          </details>
-        </div>
+            <details class="extra-card">
+              <summary>Sidequests</summary>
+              <ul class="extra-list">
+                <li><strong>Reading outside my field</strong><br /><span>science memoirs, Quantitative Finance, AI history, space exploration, physics, and books that make ambition feel less abstract.</span><br /><span><span></li>
+                <li><strong>Trying new things</strong><br /><span>new books, new places, new routines, new people, new obsessions. Anything that expands the map.</span><br /><span></span></li>
+              </ul>
+            </details>
+          </div>
+        </details>
       </section>
     </main>
   </div>

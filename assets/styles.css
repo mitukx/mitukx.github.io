@@ -5,6 +5,10 @@
   --border: #222222;
   --link: #0000ee;
   --link-visited: #551a8b;
+  --page-bg: #ffffff;
+  --surface: #efefef;
+  --surface-muted: #f6f6f6;
+  --content-rule: #222222;
 }
 
 * {
@@ -18,7 +22,7 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  background: #ffffff;
+  background: var(--page-bg);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.5;
@@ -230,7 +234,7 @@ a {
 .amini-right {
   max-width: 900px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #111111;
+  color: var(--text);
   font-size: 16px;
   line-height: 1.35;
 }
@@ -268,7 +272,7 @@ a {
 
 hr {
   border: 0;
-  border-top: 1px solid #222222;
+  border-top: 1px solid var(--content-rule);
   margin: 26px 0 14px;
 }
 
@@ -286,8 +290,8 @@ hr {
 }
 
 .news-box {
-  border: 2px solid #111111;
-  background: #efefef;
+  border: 2px solid var(--text);
+  background: var(--surface);
   padding: 12px 18px;
   margin-bottom: 18px;
 }
@@ -325,7 +329,7 @@ hr {
 }
 
 .pub-authors {
-  color: #222222;
+  color: var(--muted);
 }
 
 .thought-list {
@@ -336,7 +340,7 @@ hr {
 }
 
 .thought-card {
-  border-bottom: 1px solid #222222;
+  border-bottom: 1px solid var(--content-rule);
   padding: 0 0 20px;
 }
 
@@ -359,7 +363,7 @@ hr {
 
 .thought-card p {
   margin: 0;
-  color: #111111;
+  color: var(--text);
   font-size: 16px;
   line-height: 1.55;
   text-decoration: none;
@@ -572,7 +576,50 @@ body .amini-right .thought-post h2 {
 }
 
 .extra-section {
-  margin-top: 6px;
+  display: block;
+  margin-top: 34px;
+  padding-top: 12px;
+  border-top: 1px solid var(--content-rule);
+}
+
+.extra-reveal {
+  width: 100%;
+}
+
+.extra-reveal-button {
+  width: 28px;
+  height: 24px;
+  margin: 0 auto 14px;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.extra-reveal-button::-webkit-details-marker {
+  display: none;
+}
+
+.extra-reveal-button:hover,
+.extra-reveal[open] > .extra-reveal-button {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--surface-muted);
+}
+
+.extra-reveal-button:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
 }
 
 .extra-grid {
@@ -1331,4 +1378,175 @@ body .amini-right .thought-post h2 {
 .site-footer a:hover {
   color: #ffffff;
   text-decoration: underline;
+}
+
+
+/* =========================================================
+   Color themes
+   ========================================================= */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --text: #eeeeee;
+  --muted: #b6bcc5;
+  --border: #4d535d;
+  --link: #8ab4f8;
+  --link-visited: #c7a6ff;
+  --page-bg: #1a1c20;
+  --surface: #292c32;
+  --surface-muted: #33373e;
+  --content-rule: #4b5058;
+}
+
+html[data-theme="black"] {
+  color-scheme: dark;
+  --text: #f2f2f2;
+  --muted: #a8a8a8;
+  --border: #444444;
+  --link: #8ab4f8;
+  --link-visited: #c7a6ff;
+  --page-bg: #000000;
+  --surface: #0b0b0b;
+  --surface-muted: #131313;
+  --content-rule: #3c3c3c;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="black"] body {
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+html[data-theme] .amini-right,
+html[data-theme] .thought-card p,
+html[data-theme] .project-summary,
+html[data-theme] .project-points {
+  color: var(--text);
+}
+
+html[data-theme] .amini-right a,
+html[data-theme] .amini-right a:visited {
+  color: var(--link);
+}
+
+html[data-theme] .amini-right a:visited {
+  color: var(--link-visited);
+}
+
+html[data-theme] hr,
+html[data-theme] .thought-card {
+  border-color: var(--content-rule);
+}
+
+html[data-theme] .news-box {
+  border-color: var(--border);
+  background: var(--surface);
+}
+
+html[data-theme] .cv-box span,
+html[data-theme] .pub-venue,
+html[data-theme] .presentation-meta,
+html[data-theme] .news-empty-text,
+html[data-theme] .project-kicker,
+html[data-theme] .projects-intro {
+  color: var(--muted) !important;
+}
+
+html[data-theme] .project-card {
+  border-color: var(--border);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme] .project-card.featured {
+  border-color: var(--border) !important;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme] .extra-card {
+  border: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+html[data-theme] .extra-card[open] {
+  border-color: transparent;
+}
+
+html[data-theme] .extra-card summary,
+html[data-theme] .extra-list li,
+html[data-theme] .extra-reading-list li,
+html[data-theme] .music-title,
+html[data-theme] .music-carousel .music-title {
+  color: var(--text) !important;
+}
+
+html[data-theme] .extra-card summary::after {
+  background: var(--border);
+}
+
+html[data-theme] .extra-lead,
+html[data-theme] .extra-reading-list span,
+html[data-theme] .music-artist,
+html[data-theme] .music-placeholder,
+html[data-theme] .music-album {
+  color: var(--muted) !important;
+}
+
+html[data-theme] .music-nav {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: none;
+}
+
+html[data-theme] .music-nav:hover {
+  border-color: var(--border);
+  background: var(--surface-muted);
+}
+
+.theme-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.theme-controls button {
+  appearance: none;
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background: var(--surface-muted);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.theme-controls button:hover,
+.theme-controls button:focus-visible {
+  color: var(--text);
+  border-color: var(--text);
+  background: var(--surface);
+}
+
+.theme-toggle {
+  text-decoration: none;
+}
+
+.theme-controls button:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
 }
