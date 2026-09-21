@@ -1,5 +1,7 @@
 (() => {
-  const STORAGE_KEY = "site-theme";
+  // Use a fresh key so older dark-mode test preferences do not override
+  // the intended white default on the next visit.
+  const STORAGE_KEY = "site-theme-v2";
   const THEMES = ["light", "dark", "black"];
   const THEME_ICONS = {
     light: "☼",
