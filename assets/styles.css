@@ -240,7 +240,22 @@ a {
 }
 
 .top-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 20px;
   margin: 0 0 28px;
+}
+
+.top-profile > :not(.theme-controls) {
+  grid-column: 1;
+}
+
+.top-profile > .theme-controls {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  align-self: start;
 }
 
 .top-profile h1 {
@@ -518,6 +533,14 @@ body .amini-right .thought-post h2 {
     padding: 22px 16px 48px;
   }
 
+  .top-profile {
+    display: block;
+  }
+
+  .top-profile > .theme-controls {
+    margin: 0 0 16px;
+  }
+
   .amini-right {
     font-size: 15px;
   }
@@ -783,10 +806,6 @@ body .amini-right .thought-post h2 {
    Extra section photo layout
    Reference-inspired minimal two-column layout with galleries.
    ========================================================= */
-.extra-section {
-  margin-top: 6px;
-}
-
 .extra-grid.extra-grid-photo {
   display: grid;
   grid-template-columns: repeat(2, minmax(260px, 1fr));
