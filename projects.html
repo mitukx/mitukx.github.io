@@ -30,26 +30,9 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <style>
-    .projects-intro {
-      max-width: 760px;
-      margin-top: 0.75rem;
-      color: var(--muted, #5f6873);
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
     .project-card.featured {
       border-color: #111111;
       box-shadow: 3px 3px 0 rgba(17, 17, 17, 0.12);
-    }
-
-    .project-kicker {
-      margin: 0 0 0.55rem;
-      color: #555555;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
     .project-links {
@@ -168,15 +151,10 @@
           <button type="button" class="theme-toggle" data-theme-toggle aria-label="Change color theme" title="Change color theme">☼</button>
         </div>
         <h1>Projects</h1>
-        <p class="projects-intro">
-          Selected research projects in statistical learning theory, deep learning theory,
-          and formal methods.
-        </p>
       </header>
 
       <section class="project-list" aria-label="Research projects">
         <article class="project-card featured">
-          <p class="project-kicker">Contributor · Lean 4 formalization</p>
           <header>
             <h2>StatsMLlib</h2>
           </header>
@@ -201,15 +179,26 @@
 
         <article class="project-card">
           <header>
-            <h2>Best-of-N Inference under Imperfect Verifiers</h2>
+            <h2>Imperfect Verification in Test-Time Scaling</h2>
           </header>
 
           <p class="project-summary">
-            I am developing a theoretical framework for understanding Best-of-N inference
-            under imperfect verification. The project studies how inference-time search
-            interacts with verifier rankings and true utility, with a focus on the
-            statistical foundations of evaluating such systems.
+            Studying how imperfect verifiers interact with inference-time scaling, and when seemingly unfavorable scaling behavior can be misleading. My work develops theoretical tools for understanding the geometry of verifier–utility mismatch and the statistical cost of reliably auditing scaling decisions.
           </p>
+        </article>
+
+        <article class="project-card">
+          <header>
+            <h2>Recursive Verification Lag</h2>
+          </header>
+
+          <p class="project-summary">
+            Studying when verification fails to keep pace with recursively improving policies. I combine theoretical analysis with controlled experiments to understand how optimizer-induced policy shifts interact with imperfect or stale verifiers, and how verification should adapt as the policy evolves.
+          </p>
+
+          <div class="project-links" aria-label="Recursive Verification Lag links">
+            <a href="https://github.com/mitukx/Recursive-Verification-Lag" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
         </article>
       </section>
     </main>
