@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mitukx.github.io/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <image:image>
       <image:loc>https://mitukx.github.io/assets/profile.jpg</image:loc>
       <image:title>Kazuki Uesugi</image:title>
@@ -26,5 +26,9 @@
   <url>
     <loc>https://mitukx.github.io/misc.html</loc>
     <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://mitukx.github.io/news-archive.html</loc>
+    <lastmod>2026-10-03</lastmod>
   </url>
 </urlset>
