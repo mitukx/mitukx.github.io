@@ -134,6 +134,35 @@
 
         </div>
       </section>
+
+      <hr />
+
+      <section class="cv-section misc-quote-section" aria-label="Quote">
+        <figure class="misc-quote">
+          <img src="assets/extra/explore-dream-discover.png" alt="Quote: Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds in your sails. Explore. Dream. Discover. — Unknown" />
+          <button class="minecraft-jukebox" type="button" aria-label="Play C418 — Aria Math" aria-pressed="false">
+            <img class="minecraft-cube" src="assets/extra/minecraft-jukebox.png" alt="" aria-hidden="true" />
+          </button>
+          <span class="visually-hidden" aria-live="polite" data-minecraft-message></span>
+        </figure>
+        <div class="minecraft-player" data-jukebox-player role="group" aria-label="Aria Math playback controls" hidden>
+          <input class="jukebox-seek" data-jukebox-seek type="range" min="0" max="1000" step="1" value="0" aria-label="Seek Aria Math" disabled />
+          <div class="jukebox-toolbar">
+            <button type="button" data-jukebox-toggle aria-label="Pause Aria Math" disabled>
+              <svg class="jukebox-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z" /></svg>
+              <svg class="jukebox-pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+            </button>
+            <span class="jukebox-time" data-jukebox-time>0:00 / --:--</span>
+            <button type="button" class="jukebox-mute" data-jukebox-mute aria-label="Mute audio" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3z" /><path class="jukebox-sound-waves" d="M16 8a6 6 0 0 1 0 8M19 5a10 10 0 0 1 0 14" fill="none" stroke="currentColor" stroke-width="2" /><path class="jukebox-muted-mark" d="m16 9 5 6m0-6-5 6" fill="none" stroke="currentColor" stroke-width="2" /></svg>
+            </button>
+            <input class="jukebox-volume" data-jukebox-volume type="range" min="0" max="100" value="70" aria-label="Audio volume" disabled />
+            <a class="jukebox-credit" href="https://www.youtube.com/watch?v=1gqEIJoxSHA" target="_blank" rel="noreferrer" aria-label="Aria Math by C418 on YouTube">Aria Math · C418</a>
+            <button type="button" data-jukebox-stop aria-label="Stop Aria Math"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" /></svg></button>
+          </div>
+          <div class="jukebox-video" data-jukebox-embed aria-hidden="true"></div>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -141,5 +170,6 @@
   <script src="assets/spa-nav.js"></script>
   <script src="assets/music.js"></script>
   <script src="assets/gallery.js"></script>
+  <script src="assets/minecraft-easter-egg.js"></script>
 </body>
 </html>
