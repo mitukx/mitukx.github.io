@@ -26,8 +26,8 @@
   <link rel="icon" href="/favicon.png" type="image/png" sizes="800x800" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/favicon.png" />
-  <script src="assets/theme.js"></script>
   <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/font-toggle.js" defer></script>
 
   <style>
     .project-card.featured {
@@ -119,8 +119,13 @@
         <nav class="nav" aria-label="Primary navigation">
   <a href="index.html">Home</a>
   <a href="publications.html">Publications</a>
+  <a href="blog.html">Blog</a>
   <a href="misc.html">Misc</a>
 </nav>
+
+        <div class="font-controls">
+          <button type="button" class="font-toggle" data-font-toggle aria-pressed="false">Use normal font</button>
+        </div>
 
         <div class="icon-links" aria-label="External links">
           <a href="mailto:kzkuesg@gmail.com" aria-label="Email">
@@ -146,9 +151,6 @@
 
     <main class="content amini-right">
       <header class="top-profile">
-        <div class="theme-controls" role="group" aria-label="Color theme">
-          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Change color theme" title="Change color theme">☼</button>
-        </div>
         <h1>Projects</h1>
       </header>
 
