@@ -73,7 +73,6 @@
   </script>
 
   <link rel="stylesheet" href="assets/styles.css" />
-  <script src="assets/font-toggle.js" defer></script>
 
   <style>
     .cv-note .news-box {
@@ -179,10 +178,6 @@
           <a href="misc.html">Misc</a>
         </nav>
 
-        <div class="font-controls">
-          <button type="button" class="font-toggle" data-font-toggle aria-pressed="false">Use normal font</button>
-        </div>
-
         <div class="icon-links" aria-label="External links">
           <a href="mailto:kzkuesg@gmail.com" aria-label="Email">
             <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -196,12 +191,6 @@
             </svg>
           </a>
 
-          <a href="https://scholar.google.com/" target="_blank" rel="noreferrer" aria-label="Google Scholar">
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M8 1 0 5l8 4 8-4-8-4Zm0 5.764L3.236 4.382 8 2l4.764 2.382L8 6.764Z"/>
-              <path d="M2 7.5v3.2c0 .8 2.7 2.3 6 2.3s6-1.5 6-2.3V7.5l-6 3-6-3Z"/>
-            </svg>
-          </a>
 
           <a href="https://github.com/mitukx" target="_blank" rel="noreferrer" aria-label="GitHub">
             <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -226,17 +215,25 @@
           <p>ZEN University</p>
           <p>E-mail: kzkuesg@gmail.com</p>
           <p>
-            <a href="cv.pdf">CV</a>
-            <span> / </span>
-            <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a>
-            <span> / </span>
             <a href="https://github.com/mitukx" target="_blank" rel="noreferrer">GitHub</a>
             <span> / </span>
             <a href="https://www.linkedin.com/in/kazuki-uesugi/" target="_blank" rel="noreferrer">LinkedIn</a>
           </p>
-          <p><em>Site last update: November 3, 2026</em></p>
+          <p><em>Site last update: November 7, 2026</em></p>
         </div>
       </header>
+      <template id="reserved-profile-links">
+        <p>
+          <a href="cv.pdf">CV</a> <span> / </span> <a href="https://scholar.google.com/" target="_blank" rel="noreferrer">Google Scholar</a> <span> / </span>
+        </p>
+        <a href="https://scholar.google.com/" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 1 0 5l8 4 8-4-8-4Zm0 5.764L3.236 4.382 8 2l4.764 2.382L8 6.764Z"/>
+              <path d="M2 7.5v3.2c0 .8 2.7 2.3 6 2.3s6-1.5 6-2.3V7.5l-6 3-6-3Z"/>
+            </svg>
+          </a>
+      </template>
+
 
       <hr />
 

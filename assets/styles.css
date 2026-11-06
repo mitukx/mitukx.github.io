@@ -44,19 +44,6 @@ body {
   line-height: 1.5;
 }
 
-html[data-font-mode="normal"] body,
-html[data-font-mode="normal"] .site-title,
-html[data-font-mode="normal"] .nav a {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-html[data-font-mode="normal"] .site-title {
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-}
-
 a {
   color: var(--link);
   text-decoration: underline;
@@ -283,36 +270,6 @@ a {
   letter-spacing: -0.02em;
 }
 
-.font-controls {
-  display: flex;
-  justify-content: center;
-  margin: 14px 0 16px;
-}
-
-.font-toggle {
-  appearance: none;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 6px 10px;
-  color: var(--text);
-  background: var(--surface-muted);
-  font: inherit;
-  font-size: 12px;
-  line-height: 1.3;
-  cursor: pointer;
-}
-
-.font-toggle:hover,
-.font-toggle:focus-visible {
-  border-color: var(--text);
-  background: var(--surface);
-}
-
-.font-toggle:focus-visible {
-  outline: 2px solid var(--link);
-  outline-offset: 2px;
-}
-
 .profile-info {
   font-size: 16px;
   line-height: 1.32;
@@ -490,10 +447,6 @@ body .amini-right .thought-post h2 {
     font-size: 24px;
   }
 
-  html[data-font-mode="normal"] .site-title {
-    font-size: 38px;
-  }
-
   .portrait {
     width: 148px;
     height: 148px;
@@ -566,10 +519,6 @@ body .amini-right .thought-post h2 {
   .site-title:hover,
   .site-title:active {
     font-size: 24px;
-  }
-
-  html[data-font-mode="normal"] .site-title {
-    font-size: 34px;
   }
 
   .portrait {
