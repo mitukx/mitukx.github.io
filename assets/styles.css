@@ -1536,58 +1536,10 @@ body .amini-right .thought-post h2 {
   text-underline-offset: 2px;
 }
 
-/* --- controls --------------------------------------------------------- */
-.music-nav {
-  position: absolute;
-  top: calc(var(--music-card-w) / 2 - 14px);
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(11, 61, 46, 0.22);
-  border-radius: 50%;
-  background: rgba(255, 253, 246, 0.94);
-  color: #0b3d2e;
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.18s ease, transform 0.18s ease, background 0.18s ease;
-  box-shadow: 0 6px 16px rgba(7, 35, 27, 0.16);
-  z-index: 2;
-}
-
-.music-nav-prev { left: -2px; }
-.music-nav-next { right: -2px; }
-
-.music-carousel:hover .music-nav,
-.music-carousel:focus-within .music-nav {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.music-nav:hover {
-  background: #fffdf2;
-  border-color: rgba(11, 61, 46, 0.45);
-}
-
-.music-nav:focus-visible {
-  opacity: 1;
-  transform: scale(1);
-  outline: 2px solid rgba(11, 61, 46, 0.5);
-  outline-offset: 2px;
-}
-
 @media (max-width: 700px) {
   .music-carousel {
     --music-card-w: 128px;
     --music-gap: 12px;
-  }
-
-  .music-nav {
-    display: none;
   }
 
   .music-viewport {
@@ -1604,8 +1556,7 @@ body .amini-right .thought-post h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .music-card,
-  .music-nav {
+  .music-card {
     transition: none;
   }
 }

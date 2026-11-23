@@ -435,8 +435,6 @@ async function initMusic() {
       <div class="music-viewport">
         <div class="music-track" role="list" tabindex="0" aria-label="Recently played tracks">${cards}${clones}</div>
       </div>
-      <button class="music-nav music-nav-prev" type="button" aria-label="Previous tracks">&#8249;</button>
-      <button class="music-nav music-nav-next" type="button" aria-label="Next tracks">&#8250;</button>
       <span class="visually-hidden" data-music-status role="status" aria-live="polite">Choose a record to play a preview.</span>
     `;
     const track = container.querySelector(".music-track");
@@ -446,9 +444,7 @@ async function initMusic() {
   };
   const mountCarousel = (root, originalCount, initialPlaybackLock = false) => {
     const track = root.querySelector(".music-track");
-    const prev = root.querySelector(".music-nav-prev");
-    const next = root.querySelector(".music-nav-next");
-    if (!track || !prev || !next) return { setPlaybackLock() {}, destroy() {} };
+    if (!track) return { setPlaybackLock() {}, destroy() {} };
 
     const SPEED = 1.1;         // px per frame (~66px/s at 60fps)
     const RESUME_DELAY = 1600; // ms of inactivity before auto-scroll resumes
@@ -615,8 +611,6 @@ async function initMusic() {
     };
     const onMotionChange = () => setAuto(!prefersReducedMotion.matches);
 
-    on(prev, "click", () => nudge(-1));
-    on(next, "click", () => nudge(1));
     on(root, "mouseenter", holdAuto);
     on(root, "mouseleave", () => releaseAuto(400));
     on(root, "focusin", holdAuto);
