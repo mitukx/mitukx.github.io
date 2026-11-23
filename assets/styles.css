@@ -1358,13 +1358,9 @@ body .amini-right .thought-post h2 {
   color: #333333;
 }
 
-.music-link:hover .music-artwork {
-  transform: translateY(-1px);
-  box-shadow: 0 7px 16px rgba(7, 35, 27, 0.18);
-}
-
+/* Keep the record label fixed in the center; only the record itself moves. */
 .music-artwork {
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: none;
 }
 
 
@@ -1453,6 +1449,7 @@ body .amini-right .thought-post h2 {
 
 .music-art-frame {
   position: relative;
+  display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 12px;
@@ -1471,11 +1468,6 @@ body .amini-right .thought-post h2 {
   object-fit: cover;
   display: block;
   pointer-events: none;
-}
-
-.music-card:hover .music-artwork {
-  transform: none;
-  box-shadow: none;
 }
 
 .music-art-frame .music-dot {
@@ -1647,4 +1639,272 @@ body .amini-right .thought-post h2 {
 .site-footer a:hover {
   color: #ffffff;
   text-decoration: underline;
+}
+
+
+/* Interactive vinyl records with per-record preview toggles. */
+.music-card {
+  min-width: 0;
+}
+
+.music-card-select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.music-card-select:focus-visible {
+  border-radius: 12px;
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+.music-card-details {
+  margin: 0;
+}
+
+.music-card-center-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 4;
+  display: grid;
+  width: 40%;
+  height: 40%;
+  place-items: center;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.96);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.48), inset 0 0 0 2px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(0.82);
+  transition: opacity 0.16s ease, transform 0.16s ease, background 0.16s ease;
+  cursor: pointer;
+}
+
+.music-card:hover .music-card-center-play,
+.music-card:focus-within .music-card-center-play,
+.music-card.is-current .music-card-center-play {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.music-card-center-play:hover {
+  background: #1a1a1a;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.music-card-center-play:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+.music-card-center-play svg {
+  width: 54%;
+  height: 54%;
+  fill: currentColor;
+}
+
+.music-card-center-play .music-card-pause-icon,
+.music-card-center-play[data-playing="true"] .music-card-play-icon {
+  display: none;
+}
+
+.music-card-center-play[data-playing="true"] .music-card-pause-icon {
+  display: block;
+}
+
+.music-art-frame {
+  isolation: isolate;
+  background: transparent;
+  box-shadow: none;
+}
+
+.music-record {
+  position: absolute;
+  inset: 5px;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  background: #090909;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+}
+
+.music-record::before {
+  position: absolute;
+  inset: 7px;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.music-record::after {
+  position: absolute;
+  inset: 2px;
+  z-index: 0;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 18deg, transparent 0deg 56deg, rgba(255, 255, 255, 0.075) 59deg, transparent 65deg 198deg, rgba(255, 255, 255, 0.04) 202deg, transparent 210deg 360deg),
+    radial-gradient(circle at center, #262626 0 2px, transparent 2.5px),
+    repeating-radial-gradient(circle at center, #252525 0 1px, #111 1.5px 3px, #1d1d1d 3.5px 4.5px, #090909 5px 7px);
+  content: "";
+  pointer-events: none;
+}
+
+.music-art-frame .music-artwork,
+.music-record-label-fallback {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 48%;
+  height: 48%;
+  margin: auto;
+  border: 2px solid #111;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  transform: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.music-card[data-playable="true"] .music-art-frame .music-artwork {
+  z-index: 5;
+  transition: transform 0.22s ease, width 0.22s ease, height 0.22s ease;
+}
+
+.music-card[data-playable="true"]:hover .music-artwork,
+.music-card[data-playable="true"]:focus-within .music-artwork,
+.music-card[data-playable="true"].is-current .music-artwork {
+  transform: translate(48%, 48%) scale(0.62);
+}
+
+.music-record-label-fallback {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #49655b;
+  font-size: 18px;
+}
+
+.music-record-hole {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 4px;
+  height: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: #111;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.music-card-state {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  z-index: 2;
+  max-width: calc(100% - 14px);
+  overflow: hidden;
+  padding: 2px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #f2f3ef;
+  background: rgba(16, 20, 18, 0.78);
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.music-card.is-current .music-art-frame {
+  filter: drop-shadow(0 0 0.5px rgba(11, 61, 46, 0.85));
+}
+
+.music-card.is-current .music-record {
+  box-shadow: 0 0 0 2px rgba(11, 61, 46, 0.62), 0 5px 14px rgba(0, 0, 0, 0.23);
+}
+
+.music-card.is-playing .music-record {
+  animation: none;
+}
+
+.music-card.is-playing .music-record::after {
+  animation: music-record-spin 3.6s linear infinite;
+}
+
+@keyframes music-record-spin {
+  to { transform: rotate(360deg); }
+}
+
+.music-card-apple {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-top: -5px;
+  color: #6c776f;
+  font-size: 10.5px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.music-card-apple-badge-image {
+  display: block;
+  width: 58px;
+  height: auto;
+}
+
+.music-card-apple-credit {
+  margin-top: 2px;
+  color: #718077;
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+.music-card-apple-label[hidden],
+.music-card-apple-badge-image[hidden],
+.music-card-apple-credit[hidden] {
+  display: none !important;
+}
+
+.music-card-apple:hover {
+  color: #0b3d2e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (hover: none) {
+  .music-card-center-play:active {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-card.is-playing .music-record::after {
+    animation: none;
+  }
+
+  .music-card[data-playable="true"] .music-artwork,
+  .music-card-center-play {
+    transition: none;
+  }
 }
