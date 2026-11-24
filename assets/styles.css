@@ -1300,15 +1300,6 @@ body .amini-right .thought-post h2 {
   line-height: 1.25;
 }
 
-.music-duration {
-  margin-left: auto;
-  padding-left: 10px;
-  color: #7a877f;
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 .music-explicit {
   display: inline-flex;
   align-items: center;
@@ -1323,13 +1314,6 @@ body .amini-right .thought-post h2 {
   font-weight: 800;
   vertical-align: 2px;
 }
-
-@media (max-width: 520px) {
-  .music-duration {
-    display: none;
-  }
-}
-
 
 /* Empty News state */
 .news-box-empty {
@@ -1477,22 +1461,6 @@ body .amini-right .thought-post h2 {
   font-size: 20px;
 }
 
-/* Duration sits on the artwork instead of taking a whole row. */
-.music-carousel .music-duration {
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
-  margin: 0;
-  padding: 2px 6px;
-  border-radius: 999px;
-  background: rgba(9, 34, 26, 0.72);
-  color: #fffdf2;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  backdrop-filter: blur(4px);
-}
-
 .music-carousel .music-meta {
   min-width: 0;
   display: flex;
@@ -1545,13 +1513,6 @@ body .amini-right .thought-post h2 {
   .music-viewport {
     -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 26px), transparent 100%);
     mask-image: linear-gradient(90deg, #000 0, #000 calc(100% - 26px), transparent 100%);
-  }
-}
-
-/* The duration chip lives on the artwork, so keep it on small screens too. */
-@media (max-width: 520px) {
-  .music-carousel .music-duration {
-    display: block;
   }
 }
 

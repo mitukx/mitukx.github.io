@@ -375,7 +375,6 @@ async function initMusic() {
     const title = escapeHTML(item.title || "Unknown track");
     const artist = escapeHTML(item.artist || item.performer || "");
     const album = escapeHTML(item.album || "");
-    const durationText = escapeHTML(item.duration || "");
     const playable = canPlay(item);
     const cardAction = playable
       ? `Play 30-second Apple Music preview of ${title} by ${artist}`
@@ -389,7 +388,6 @@ async function initMusic() {
     const artFrame = `
       <span class="music-art-frame">
         <span class="music-record" aria-hidden="true">${art}<span class="music-record-hole"></span></span>
-        ${durationText ? `<span class="music-duration">${durationText}</span>` : ""}
         <span class="music-card-state" data-card-state aria-hidden="true"${playable ? " hidden" : ""}>${playable ? "" : "APPLE MUSIC"}</span>
         ${playable ? `<button class="music-card-center-play" type="button" data-music-select="${index}" data-card-play aria-label="${cardAction}" aria-pressed="false"${cloneTabIndex}>
           <svg class="music-card-play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z" /></svg>
