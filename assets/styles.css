@@ -11,6 +11,10 @@
   --content-rule: #222222;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
 @font-face {
   font-family: "Mojangles";
   src: url("fonts/mojangles.ttf") format("truetype");
@@ -1518,6 +1522,152 @@ body .amini-right .thought-post h2 {
 
 @media (prefers-reduced-motion: reduce) {
   .music-card {
+    transition: none;
+  }
+}
+
+
+/* =========================================================
+   Site-wide dark theme
+   ========================================================= */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --text: #e8ece8;
+  --muted: #b7c0b9;
+  --border: #46504a;
+  --link: #a9c9ff;
+  --link-visited: #d3b6f3;
+  --page-bg: #131613;
+  --surface: #202420;
+  --surface-muted: #1a1e1b;
+  --content-rule: #3b433e;
+}
+
+:root[data-theme="dark"] .cv-entry-head span,
+:root[data-theme="dark"] .cv-box span,
+:root[data-theme="dark"] .pub-venue,
+:root[data-theme="dark"] .presentation-meta,
+:root[data-theme="dark"] .archive-period,
+:root[data-theme="dark"] .extra-lead,
+:root[data-theme="dark"] .extra-reading-list span,
+:root[data-theme="dark"] .music-artist,
+:root[data-theme="dark"] .music-album,
+:root[data-theme="dark"] .music-placeholder,
+:root[data-theme="dark"] .gallery-fallback,
+:root[data-theme="dark"] .news-empty-text {
+  color: #b7c0b9;
+}
+
+:root[data-theme="dark"] .extra-card summary,
+:root[data-theme="dark"] .extra-grid-photo .extra-card summary,
+:root[data-theme="dark"] .music-title,
+:root[data-theme="dark"] .music-carousel .music-title {
+  color: #d5e3d9;
+}
+
+:root[data-theme="dark"] .extra-card summary::before {
+  color: #b7c0b9;
+}
+
+:root[data-theme="dark"] .extra-list li,
+:root[data-theme="dark"] .extra-grid-photo .extra-list li,
+:root[data-theme="dark"] .extra-reading-list li {
+  color: #d6ddd7 !important;
+}
+
+:root[data-theme="dark"] .gallery-image-shell {
+  border-color: #3b443e;
+  background:
+    linear-gradient(135deg, rgba(119, 153, 132, 0.12), rgba(165, 91, 101, 0.09)),
+    repeating-linear-gradient(-45deg, rgba(216, 180, 90, 0.08) 0 12px, rgba(255, 255, 255, 0.035) 12px 24px);
+}
+
+:root[data-theme="dark"] .gallery-image-shell::after {
+  background: linear-gradient(180deg, rgba(19, 22, 19, 0), rgba(19, 22, 19, 0.78));
+}
+
+:root[data-theme="dark"] .gallery-caption,
+:root[data-theme="dark"] .gallery-count {
+  color: #f0f2ee;
+  background: rgba(24, 29, 25, 0.82);
+}
+
+:root[data-theme="dark"] .gallery-button {
+  color: #aeb8b1;
+}
+
+:root[data-theme="dark"] .gallery-button:hover {
+  color: #edf2ed;
+}
+
+:root[data-theme="dark"] .project-card.featured {
+  border-color: var(--border);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle[aria-pressed="true"] {
+  border-color: var(--text);
+  background: var(--surface-muted);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+.theme-toggle svg {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-icon-moon {
+  display: none;
+}
+
+.theme-toggle[aria-pressed="true"] .theme-icon-sun {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
     transition: none;
   }
 }
