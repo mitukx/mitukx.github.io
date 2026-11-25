@@ -1,7 +1,6 @@
 (() => {
   const STORAGE_KEY = "kazuki-site-theme";
   const root = document.documentElement;
-  const colorScheme = window.matchMedia?.("(prefers-color-scheme: dark)");
 
   const readPreference = () => {
     try {
@@ -12,15 +11,12 @@
     }
   };
 
-  let savedPreference = readPreference();
-  let userHasChosen = savedPreference !== null;
+  const savedPreference = readPreference();
 
   const applyTheme = (theme, persist = false) => {
     root.dataset.theme = theme;
 
     if (persist) {
-      userHasChosen = true;
-      savedPreference = theme;
       try {
         window.localStorage.setItem(STORAGE_KEY, theme);
       } catch (_) {
@@ -35,11 +31,7 @@
     }
   };
 
-  applyTheme(savedPreference || (colorScheme?.matches ? "dark" : "light"));
-
-  colorScheme?.addEventListener?.("change", (event) => {
-    if (!userHasChosen) applyTheme(event.matches ? "dark" : "light");
-  });
+  applyTheme(savedPreference || "light");
 
   document.addEventListener("DOMContentLoaded", () => {
     if (!document.body || document.querySelector("[data-theme-toggle]")) return;
